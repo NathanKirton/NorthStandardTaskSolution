@@ -251,7 +251,7 @@ function VesselsPage({ vessels, loading, error, onAdd, onEdit, onDelete }) {
             <div className="page-header">
                 <div>
                     <div className="page-title">Vessels</div>
-                    <div className="page-subtitle">Manage your vessel inventory</div>
+                    <div className="page-subtitle">Manage vessels</div>
                 </div>
                 <button className="btn btn-primary" onClick={onAdd}>+ Add Vessel</button>
             </div>
