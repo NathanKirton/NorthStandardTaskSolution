@@ -52,8 +52,8 @@ if (app.Environment.IsDevelopment())
 }
 
 //Use Outside of development
-//app.UseSwagger();
-//app.UseSwaggerUI();
+app.UseSwagger();
+app.UseSwaggerUI();
 
 //Start Application with HTTPS redirection, authorization, and controller routing.
 app.UseHttpsRedirection();
