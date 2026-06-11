@@ -212,6 +212,8 @@ const styles = `
   }
 `;
 
+
+
 // Helper function that maps a vessel's status string to a CSS class name.
 // This keeps the badge colouring logic in one place rather than repeated in JSX.
 // Returns a class that is defined in the styles string above.
@@ -523,20 +525,21 @@ export default function App() {
     const loadData = async () => {
         try {
             setLoading(true);
-            // Fire both requests simultaneously rather than one after the other
             const [vRes, bRes] = await Promise.all([
-                fetch(`${API_BASE}/Vessels`),
-                fetch(`${API_BASE}/BlueCards`),
+                fetch(`${API_BASE}/api/Vessels`),
+                fetch(`${API_BASE}/api/BlueCards`),
             ]);
             setVessels(await vRes.json());
             setBluecards(await bRes.json());
-            setError(null); // clear any previous error on success
+            setError(null);
         } catch {
             setError("Failed to load data");
         } finally {
-            setLoading(false); // always stop the loading spinner, even if it errored
+            setLoading(false);
         }
     };
+
+
 
     // useEffect with an empty dependency array [] means this runs once when the
     // component first mounts — the equivalent of "on page load"
