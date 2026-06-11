@@ -24,12 +24,12 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
-//Configure CORS to allow requests from the React frontend running on localhost:3000
+//Configure CORS to allow requests from the React frontend
 builder.Services.AddCors(options => 
 {
     options.AddPolicy("AllowReact", policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins("https://jolly-bay-051ff8210.7.azurestaticapps.net")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });

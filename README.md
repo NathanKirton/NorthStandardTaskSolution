@@ -43,9 +43,6 @@ Adding a Simple Frontend for Managing Vessel & Blue Card Information:
 	through FTP and waiting for refreshes. This removes the friction. 
 
 
-Run The Project Locally:
-	The Azure DB is set to allow all IP's
-	run Program.cs using CNTRL F5
-	Open a new terminal cd into the frontend folder 
-	run npm start
-	Frontend will open
+The project is fully live using Azure Cloud Services
+Backend: https://northstandardtask-e5fjhtgea0drfjad.westcentralus-01.azurewebsites.net/swagger/index.html
+Frontend: https://jolly-bay-051ff8210.7.azurestaticapps.net/
