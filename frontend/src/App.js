@@ -3,9 +3,9 @@
 // - useEffect: runs code after the component mounts (e.g. fetching data on page load)
 import { useState, useEffect } from "react";
 
-// The base URL of the .NET API running locally.
+// The base URL of the .NET API running on the azure web server.
 // All fetch calls will be prefixed with this so we don't repeat it everywhere.
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://northstandardtask-e5fjhtgea0drfjad.westcentralus-01.azurewebsites.net";
 
 // All CSS for the app is written as a plain string and injected via a <style> tag.
 // This keeps everything in one file without needing a separate .css file.
