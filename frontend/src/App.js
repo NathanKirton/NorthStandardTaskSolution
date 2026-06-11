@@ -585,7 +585,7 @@ export default function App() {
             if (modalType === "vessel") {
                 // If editingItem exists we're updating, so use PUT to the item's specific URL.
                 // Otherwise we're creating, so POST to the collection URL.
-                const url = editingItem ? `${API_BASE}/Vessels/${editingItem.vesselId}` : `${API_BASE}/Vessels`;
+                const url = editingItem ? `${API_BASE}/api/Vessels/${editingItem.vesselId}` : `${API_BASE}/api/Vessels`;
                 const method = editingItem ? "PUT" : "POST";
                 await fetch(url, {
                     method,
@@ -603,7 +603,7 @@ export default function App() {
                     expiryDate: form.ExpiryDate ? new Date(form.ExpiryDate).toISOString() : null,
                     documentUrl: form.DocumentUrl,
                 };
-                const url = editingItem ? `${API_BASE}/BlueCards/${editingItem.blueCardId}` : `${API_BASE}/BlueCards`;
+                const url = editingItem ? `${API_BASE}/api/BlueCards/${editingItem.blueCardId}` : `${API_BASE}/api/BlueCards`;
                 const method = editingItem ? "PUT" : "POST";
                 await fetch(url, {
                     method,
@@ -647,7 +647,7 @@ export default function App() {
                             onDelete={async (id) => {
                                 // Ask the user to confirm before sending the DELETE request
                                 if (window.confirm("Delete this vessel?")) {
-                                    await fetch(`${API_BASE}/Vessels/${id}`, { method: "DELETE" });
+                                    await fetch(`${API_BASE}/api/Vessels/${id}`, { method: "DELETE" });
                                     loadData(); // refresh the list after deletion
                                 }
                             }}
@@ -663,7 +663,7 @@ export default function App() {
                             onEdit={(b) => openModal("bluecard", b)}
                             onDelete={async (id) => {
                                 if (window.confirm("Delete this bluecard?")) {
-                                    await fetch(`${API_BASE}/BlueCards/${id}`, { method: "DELETE" });
+                                    await fetch(`${API_BASE}/api/BlueCards/${id}`, { method: "DELETE" });
                                     loadData();
                                 }
                             }}
